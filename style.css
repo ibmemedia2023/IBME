@@ -1,0 +1,652 @@
+/* ==========================================================================
+   RESET & VARIABLES GLOBALES
+   ========================================================================== */
+:root {
+  --primary-navy: #017cbf;
+  --secondary-navy: #0f2b48;
+  --accent-gold: #e5a93b;
+  --light-gold: #f4c46b;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --white: #ffffff;
+  --whatsapp-green: #25d366;
+  --whatsapp-dark: #128c7e;
+  
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(10,25,47,0.12);
+  --shadow-lg: 0 10px 30px rgba(10,25,47,0.2);
+
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar {
+  background-color: var(--primary-navy);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-badge {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.logo-sub {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent-gold);
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 700 !important;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-gold);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10,25,47,0.92), rgba(15,43,72,0.85)), url('DSC_0011.jpg') center/cover no-repeat;
+  color: var(--white);
+  padding: 8rem 0 6rem;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.badge-gold {
+  background-color: rgba(229, 169, 59, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(229,169,59,0.3);
+}
+
+.btn-gold:hover {
+  background-color: var(--light-gold);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--primary-navy);
+}
+
+/* ==========================================================================
+   BANNER DE TRAYECTORIA (26 AÑOS)
+   ========================================================================== */
+.banner-badge {
+  background-color: var(--secondary-navy);
+  color: var(--white);
+  padding: 2.5rem 0;
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+.banner-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.badge-circle {
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--accent-gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.badge-circle .stars {
+  color: var(--accent-gold);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.badge-circle .years {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+.badge-circle .label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.banner-text h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.3rem;
+}
+
+.banner-text p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   SECCIONES Y TARJETAS
+   ========================================================================== */
+.section {
+  padding: 5rem 0;
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Grid de Precios */
+.grid-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.border-gold { border-top: 5px solid var(--accent-gold); }
+.border-blue { border-top: 5px solid var(--secondary-navy); }
+
+.pricing-card.featured {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  border: 2px solid var(--accent-gold);
+  transform: scale(1.03);
+}
+
+.badge-featured {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.featured .tag {
+  color: #94a3b8;
+}
+
+.price-box {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.price-box .currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.price-box .amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.price-box .period {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.featured .price-box .period {
+  color: #cbd5e1;
+}
+
+.price-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.featured .price-desc {
+  color: #cbd5e1;
+}
+
+/* Grid de Requisitos */
+.grid-requisitos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.req-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.req-number {
+  background-color: var(--secondary-navy);
+  color: var(--accent-gold);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.req-info h4 {
+  color: var(--primary-navy);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.req-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   GALERÍA ESTUDIANTIL
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  height: 240px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(10,25,47,0.9));
+  color: var(--white);
+  padding: 1.2rem 1rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+.footer {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  padding-top: 4rem;
+  border-top: 4px solid var(--accent-gold);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+}
+
+.footer-brand {
+  max-width: 450px;
+}
+
+.footer-brand h3 {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+}
+
+.footer-phrase {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--light-gold);
+  line-height: 1.5;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+}
+
+.footer-contact p {
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.btn-whatsapp-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--whatsapp-green);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+.btn-whatsapp-footer:hover {
+  background-color: var(--whatsapp-dark);
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  background-color: #050c1a;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--whatsapp-green);
+  color: var(--white);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  transition: var(--transition);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: var(--whatsapp-dark);
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (MOBILE FIRST ADJUSTMENTS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .banner-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
