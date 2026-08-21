@@ -3,7 +3,7 @@
    ========================================== */
 :root {
     --primary-color: #2397C8;      /* Azul Celeste del logo */
-    --primary-dark: #106286;       /* Azul Celeste Oscuro para hover */
+    --primary-dark: #106286;       /* Azul Celeste Oscuro */
     --navy-dark: #0B3B5C;          /* Azul Oscuro institucional */
     --accent-yellow: #F7C927;      /* Amarillo del listón */
     --text-color: #2D3748;         /* Texto oscuro */
@@ -63,7 +63,7 @@ body {
 }
 
 /* ==========================================
-   BOTONES Y INSIGNIAS
+   BOTONES E INSIGNIAS
    ========================================== */
 .btn {
     display: inline-flex;
@@ -149,7 +149,7 @@ body {
 }
 
 .logo-img {
-    height: 45px;
+    height: 35px;
     width: auto;
 }
 
@@ -186,6 +186,7 @@ body {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero h1 {
@@ -210,11 +211,11 @@ body {
 }
 
 /* ==========================================
-   CONTENEDOR DE VIDEO RESPONSIVO
+   VIDEO Y REPRODUCTOR
    ========================================== */
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 900px;
@@ -229,6 +230,118 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* ==========================================
+   REQUISITOS Y ADMISIONES (TARJETAS)
+   ========================================== */
+.requisitos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.req-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.req-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.req-icon {
+    font-size: 2.5rem;
+    color: var(--navy-dark);
+    margin-bottom: 15px;
+}
+
+.req-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.req-card small {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748B;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   COSTOS Y MODALIDADES
+   ========================================== */
+.costos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.cost-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.cost-card:hover {
+    transform: translateY(-5px);
+}
+
+.cost-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--navy-dark);
+    margin-bottom: 15px;
+}
+
+.cost-card .price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.cost-card p {
+    font-size: 0.95rem;
+    color: #64748B;
+}
+
+/* Tarjeta Destacada: Modalidad Internado */
+.cost-card.highlight {
+    background: var(--navy-dark);
+    color: var(--white);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(11, 59, 92, 0.3);
+    padding: 50px 20px;
+    border: 2px solid var(--accent-yellow);
+}
+
+.cost-card.highlight:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.cost-card.highlight h3 {
+    color: var(--white);
+}
+
+.cost-card.highlight .price {
+    color: var(--accent-yellow);
+}
+
+.cost-card.highlight p {
+    color: rgba(255,255,255,0.85);
 }
 
 /* ==========================================
@@ -403,6 +516,15 @@ body {
 
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .cost-card.highlight {
+        transform: scale(1);
+        padding: 40px 20px;
+    }
+    
+    .cost-card.highlight:hover {
+        transform: translateY(-5px);
     }
 
     .footer-content {
