@@ -53,7 +53,7 @@
     <!-- Sección Video Promocional -->
     <section id="video" class="section video-section">
         <div class="container text-center">
-            <h2 class="section-title">Quienes Somos</h2>
+            <h2 class="section-title">Video Promocional IBME</h2>
             <p class="section-subtitle">Descubre nuestra visión, misión y la experiencia de estudiar con nosotros.</p>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/UWD9c4xIS08" title="Video Promocional IBME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -126,27 +126,51 @@
         </div>
     </section>
 
-    <!-- Sección Galería de Ministerio -->
+    <!-- Sección Galería de Ministerio con Lightbox CSS Puro -->
     <section id="galeria" class="section">
         <div class="container text-center">
             <h2 class="section-title">Nuestro Ministerio en Acción</h2>
-            <p class="section-subtitle">Impactando comunidades a través de la educación teológica y el trabajo de campo.</p>
+            <p class="section-subtitle">Haz clic en cualquier imagen para ampliarla.</p>
             
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="DSC_0011.JPG" alt="Ministerio IBME 1"></div>
-                <div class="gallery-item"><img src="36.JPG" alt="Ministerio IBME 2"></div>
-                <div class="gallery-item"><img src="53.JPG" alt="Ministerio IBME 3"></div>
-                <div class="gallery-item"><img src="74.JPG" alt="Ministerio IBME 4"></div>
-                <div class="gallery-item"><img src="DSC_0023.JPG" alt="Ministerio IBME 5"></div>
-                <div class="gallery-item"><img src="DSC_0063.JPG" alt="Ministerio IBME 6"></div>
-                <div class="gallery-item"><img src="DSC_0156.JPG" alt="Ministerio IBME 7"></div>
-                <div class="gallery-item"><img src="DSC_0342.JPG" alt="Ministerio IBME 8"></div>
+                <a href="#img1" class="gallery-item"><img src="DSC_0077.JPG" alt="Ministerio IBME 1"></a>
+                <a href="#img2" class="gallery-item"><img src="DSC_0011.JPG" alt="Ministerio IBME 2"></a>
+                <a href="#img3" class="gallery-item"><img src="DSC_0023.JPG" alt="Ministerio IBME 3"></a>
+                <a href="#img4" class="gallery-item"><img src="DSC_0063.JPG" alt="Ministerio IBME 4"></a>
+                <a href="#img5" class="gallery-item"><img src="DSC_0037.JPG" alt="Ministerio IBME 5"></a>
+                <a href="#img6" class="gallery-item"><img src="DSC_0106.JPG" alt="Ministerio IBME 6"></a>
+            </div>
+
+            <!-- Modales Lightbox en HTML/CSS Puro -->
+            <div id="img1" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0077.JPG" alt="Ministerio IBME 1 Ampliada">
+            </div>
+            <div id="img2" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0011.JPG" alt="Ministerio IBME 2 Ampliada">
+            </div>
+            <div id="img3" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0023.JPG" alt="Ministerio IBME 3 Ampliada">
+            </div>
+            <div id="img4" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0063.JPG" alt="Ministerio IBME 4 Ampliada">
+            </div>
+            <div id="img5" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0037.JPG" alt="Ministerio IBME 5 Ampliada">
+            </div>
+            <div id="img6" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0106.JPG" alt="Ministerio IBME 6 Ampliada">
             </div>
 
             <!-- Botón Repositorio de Fotos Flickr -->
             <div class="more-photos-box">
                 <a href="https://flic.kr/ps/4844n2" target="_blank" class="btn btn-secondary">
-                    <i class="fa-solid fa-images"></i> Ver más fotos aquí
+                    <i class="fa-solid fa-images"></i> Ver Repositorio Completo de Fotos en Flickr
                 </a>
             </div>
         </div>
@@ -178,7 +202,7 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <img src="logo-ibme.png" alt="Logo Blanco IBME" class="footer-logo">
-                <p>Formando Siervos para la Gloria de Dios.</p>
+                <p>Formando obreros aprobados para la obra del Señor.</p>
             </div>
 
             <div class="footer-social">
@@ -192,7 +216,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026-2027 Instituto Bíblico Misionero Ecuatoriano. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Instituto Bíblico Misionero Ecuatoriano. Todos los derechos reservados.</p>
         </div>
     </footer>
 
