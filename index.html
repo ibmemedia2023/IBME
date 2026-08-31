@@ -20,15 +20,23 @@
             <a href="#" class="logo-link">
                 <img src="logo-ibmecolores.png" alt="Logo IBME" class="logo-img">
             </a>
-            <nav class="nav-menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#video">Conócenos</a>
-                <a href="#admisiones">Admisiones</a>
-                <a href="#galeria">Ministerio</a>
-                <a href="#podcast">Podcast</a>
-                <a href="#contacto">Contacto</a>
+            
+            <!-- Botón Menú Hamburguesa para Móviles -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#video" class="nav-link">Conócenos</a>
+                <a href="#departamentos" class="nav-link">Departamentos</a>
+                <a href="#materias" class="nav-link">Materias</a>
+                <a href="#admisiones" class="nav-link">Admisiones</a>
+                <a href="#galeria" class="nav-link">Ministerio</a>
+                <a href="#podcast" class="nav-link">Podcast</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary nav-btn">Inscripciones</a>
             </nav>
-            <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary nav-btn">Inscripciones</a>
         </div>
     </header>
 
@@ -61,8 +69,121 @@
         </div>
     </section>
 
+    <!-- Sección: Áreas o Departamentos -->
+    <section id="departamentos" class="section bg-light">
+        <div class="container text-center">
+            <span class="badge">Formación Integral</span>
+            <h2 class="section-title">Áreas de Trabajo del IBME</h2>
+            <p class="section-subtitle">Estructura enfocada en el desarrollo académico, espiritual y práctico de cada estudiante.</p>
+            
+            <div class="deptos-grid">
+                <div class="depto-card">
+                    <div class="depto-icon"><i class="fa-solid fa-book-bible"></i></div>
+                    <h3>Dpto. Académico</h3>
+                    <p>El IBME ofrece 3 años de capacitación teológica. El foco central de estudio es la Biblia en sí misma, con una duración de 6 semanas clase, cursando así 12 materias por año.</p>
+                </div>
+                <div class="depto-card">
+                    <div class="depto-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Dpto. Vida</h3>
+                    <p>Consideramos que la convivencia y el trato entre hermanos ayuda al crecimiento espiritual, por esta razón evaluamos sus actitudes, su vida moral, y el cumplimiento de los horarios de las actividades del IBME, ya que el alumno está internado y sujeto a los horarios y reglamentos.</p>
+                </div>
+                <div class="depto-card">
+                    <div class="depto-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                    <h3>Dpto. Ministerio</h3>
+                    <p>Desde el primer año de estudios el alumno formará parte de una iglesia local, a partir de su segundo y tercer año podrá servir y ejercer sus dones espirituales, su cuarto año será de práctica, con viajes misioneros, enseñanzas, talleres, campamentos y discipulados en diferentes lugares del país.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Malla Curricular Desplegable (Accordion) -->
+    <section id="materias" class="section">
+        <div class="container text-center">
+            <span class="badge badge-accent">Malla Curricular</span>
+            <h2 class="section-title">Materias del Plan de Estudios</h2>
+            <p class="section-subtitle">Haz clic en cada año para desplegar la lista de asignaturas asignadas.</p>
+
+            <div class="materias-accordion">
+                <!-- Primer Año -->
+                <details class="malla-card">
+                    <summary class="malla-header bg-primer-ano">
+                        <div class="header-title">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h3>Primer Año</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <ul class="materias-list">
+                        <li>Panorama del Antiguo Testamento I</li>
+                        <li>Introducción a la Interpretación Bíblica (Hermenéutica Especial)</li>
+                        <li>Vida Cristiana (Cosmovisión / Métodos de Estudio Bíblico)</li>
+                        <li>Panorama del Antiguo Testamento II</li>
+                        <li>Panorama de Doctrinas Bíblicas</li>
+                        <li>Pentateuco</li>
+                        <li>Panorama del Nuevo Testamento</li>
+                        <li>Evangelios Sinópticos (Evangelio de Juan, Vida de Cristo)</li>
+                        <li>Geografía Bíblica</li>
+                        <li>Teología I (Eclesiología / Escatología)</li>
+                        <li>Vida de Cristo</li>
+                        <li>Vida y Cartas de Pablo</li>
+                    </ul>
+                </details>
+
+                <!-- Segundo Año -->
+                <details class="malla-card">
+                    <summary class="malla-header bg-segundo-ano">
+                        <div class="header-title">
+                            <i class="fa-solid fa-book-open"></i>
+                            <h3>Segundo Año</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <ul class="materias-list">
+                        <li>Hermenéutica (Métodos de Estudio Bíblico)</li>
+                        <li>Teología II (Teología Propia / Antropología / Hamartología)</li>
+                        <li>Génesis</li>
+                        <li>Romanos / Gálatas</li>
+                        <li>Teología III (Cristología / Neumatología)</li>
+                        <li>Isaías</li>
+                        <li>Homilética</li>
+                        <li>Escritos Juaninos</li>
+                        <li>Historia de la Iglesia</li>
+                        <li>Epístolas de la Prisión</li>
+                        <li>Lucas / Hechos</li>
+                        <li>Soteriología</li>
+                    </ul>
+                </details>
+
+                <!-- Tercer Año -->
+                <details class="malla-card">
+                    <summary class="malla-header bg-tercer-ano">
+                        <div class="header-title">
+                            <i class="fa-solid fa-cross"></i>
+                            <h3>Tercer Año</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <ul class="materias-list">
+                        <li>Epístolas Pastorales</li>
+                        <li>Hebreos</li>
+                        <li>1 y 2 de Corintios</li>
+                        <li>Éxodo / Números</li>
+                        <li>Israel Primitivo</li>
+                        <li>Misiones y Evangelismo</li>
+                        <li>Apologética</li>
+                        <li>Consejería</li>
+                        <li>Dispensacionalismo</li>
+                        <li>Ministrando en la Iglesia</li>
+                        <li>Daniel</li>
+                        <li>Religiones Mundiales</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección Admisiones: Requisitos -->
-    <section id="admisiones" class="section">
+    <section id="admisiones" class="section bg-light">
         <div class="container text-center">
             <span class="badge badge-accent">Admisiones 2026 - 2027</span>
             <h2 class="section-title">Requisitos de Inscripción</h2>
@@ -98,7 +219,7 @@
     </section>
 
     <!-- Sección Admisiones: Costos -->
-    <section class="section bg-light">
+    <section class="section">
         <div class="container text-center">
             <h2 class="section-title">Costos y Modalidades</h2>
             <p class="section-subtitle">Opciones accesibles para tu formación teológica.</p>
@@ -127,9 +248,9 @@
     </section>
 
     <!-- Sección Galería de Ministerio con Lightbox CSS Puro -->
-    <section id="galeria" class="section">
+    <section id="galeria" class="section bg-light">
         <div class="container text-center">
-         <h2 class="section-title">Nuestro Ministerio en Acción</h2>
+            <h2 class="section-title">Nuestro Ministerio en Acción</h2>
                 
             <div class="gallery-grid">
                 <a href="#img1" class="gallery-item"><img src="53.JPG" alt="Ministerio IBME 1"></a>
@@ -167,7 +288,7 @@
                 <a href="#galeria" class="lightbox-close">&times;</a>
                 <img src="36.JPG" alt="Ministerio IBME 6 Ampliada">
             </div>
- <div id="img7" class="lightbox">
+            <div id="img7" class="lightbox">
                 <a href="#galeria" class="lightbox-close">&times;</a>
                 <img src="DSC_0156.JPG" alt="Ministerio IBME 7 Ampliada">
             </div>
@@ -175,6 +296,7 @@
                 <a href="#galeria" class="lightbox-close">&times;</a>
                 <img src="DSC_0342.JPG" alt="Ministerio IBME 8 Ampliada">
             </div>
+
             <!-- Botón Repositorio de Fotos Flickr -->
             <div class="more-photos-box">
                 <a href="https://flic.kr/ps/4844n2" target="_blank" class="btn btn-secondary">
@@ -185,7 +307,7 @@
     </section>
 
     <!-- Sección Podcast -->
-    <section id="podcast" class="section podcast-section bg-light">
+    <section id="podcast" class="section podcast-section">
         <div class="container">
             <div class="podcast-card">
                 <div class="podcast-info">
@@ -233,5 +355,32 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Script para abrir/cerrar el menú en móviles -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
