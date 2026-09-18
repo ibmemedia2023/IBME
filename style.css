@@ -98,6 +98,16 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-accent {
+    background-color: var(--accent-yellow);
+    color: var(--navy-dark);
+}
+
+.btn-accent:hover {
+    background-color: #e5b71b;
+    transform: translateY(-2px);
+}
+
 .btn-whatsapp {
     background-color: #25D366;
     color: var(--white);
@@ -108,19 +118,14 @@ body {
     transform: translateY(-2px);
 }
 
-.btn-gold {
-    background-color: var(--accent-yellow);
-    color: var(--navy-dark);
-}
-
-.btn-gold:hover {
-    background-color: #e5b810;
-    transform: translateY(-2px);
-}
-
 .btn-lg {
     padding: 15px 32px;
     font-size: 1.05rem;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
 }
 
 .badge {
@@ -165,7 +170,8 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 18px;
+    gap: 20px;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -173,12 +179,18 @@ body {
     color: var(--navy-dark);
     font-weight: 600;
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 /* ==========================================
@@ -243,263 +255,109 @@ body {
 }
 
 /* ==========================================
-   DEPARTAMENTOS
+   MALLA CURRICULAR (ACORDEÓN INTERACTIVO)
    ========================================== */
-.deptos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.depto-card {
-    background: var(--white);
-    padding: 40px 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border-bottom: 4px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.depto-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.depto-icon {
-    width: 70px;
-    height: 70px;
-    background: rgba(35, 151, 200, 0.1);
-    color: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 20px;
-}
-
-.depto-card h3 {
-    font-family: var(--font-heading);
-    color: var(--navy-dark);
-    font-size: 1.35rem;
-    margin-bottom: 15px;
-}
-
-.depto-card p {
-    font-size: 0.95rem;
-    color: #4A5568;
-    line-height: 1.7;
-}
-
-/* ==========================================
-   MATERIAS Y MALLA CURRICULAR
-   ========================================== */
-.materias-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.malla-card {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    overflow: hidden;
-    text-align: left;
-    transition: transform 0.3s ease;
-}
-
-.malla-card:hover {
-    transform: translateY(-5px);
-}
-
-.malla-header {
-    padding: 20px 25px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.malla-header i {
-    font-size: 1.5rem;
-}
-
-.malla-header h3 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    margin: 0;
-}
-
-.bg-primer-ano { background-color: #2E7D32; }
-.bg-segundo-ano { background-color: #E65100; }
-.bg-tercer-ano { background-color: var(--navy-dark); }
-
-.materias-list {
-    list-style: none;
-    padding: 20px 25px;
-    margin: 0;
-}
-
-.materias-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #E2E8F0;
-    font-size: 0.95rem;
-    color: var(--text-color);
-    position: relative;
-    padding-left: 20px;
-}
-
-.materias-list li:last-child {
-    border-bottom: none;
-}
-
-.materias-list li::before {
-    content: "•";
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: 6px;
-}
-
-/* ==========================================
-   SECCIÓN DE LA APP DE EVANGELISMO (PWA)
-   ========================================== */
-.bg-app-feature {
-    background: linear-gradient(135deg, #0B3B5C 0%, #062338 100%);
-    color: var(--white);
-}
-
-.app-download-box {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.app-info h2 {
-    font-family: var(--font-heading);
-    font-size: 2.3rem;
-    margin-bottom: 15px;
-    color: var(--white);
-}
-
-.app-description {
-    font-size: 1.1rem;
-    color: #CBD5E1;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.app-features-list {
+.accordion-container {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 35px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
     gap: 15px;
 }
 
-.feature-icon {
-    font-size: 1.5rem;
-    color: var(--accent-yellow);
-    background: rgba(247, 201, 39, 0.1);
-    padding: 12px;
-    border-radius: 12px;
-    flex-shrink: 0;
+.accordion-item {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
 }
 
-.feature-item h4 {
+.accordion-header {
+    width: 100%;
+    background: var(--navy-dark);
+    color: var(--white);
+    padding: 18px 25px;
     font-family: var(--font-heading);
     font-size: 1.1rem;
-    color: var(--white);
-    margin-bottom: 4px;
-}
-
-.feature-item p {
-    font-size: 0.9rem;
-    color: #94A3B8;
-}
-
-.app-actions {
+    font-weight: 700;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.app-compatibility {
-    font-size: 0.85rem;
-    color: #94A3B8;
-}
-
-/* Mockup del teléfono */
-.app-mockup {
-    display: flex;
-    justify-content: center;
-}
-
-.phone-frame {
-    width: 250px;
-    height: 480px;
-    background: #1E293B;
-    border: 8px solid #334155;
-    border-radius: 36px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.phone-screen {
-    background: linear-gradient(180deg, #106286 0%, #0B3B5C 100%);
-    height: 100%;
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--primary-dark);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    background-color: var(--white);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 2000px;
+    transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.malla-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+.malla-card {
+    background: var(--bg-light);
+    border-radius: 8px;
     padding: 20px;
-    color: var(--white);
+    border-left: 4px solid var(--primary-color);
 }
 
-.phone-logo {
-    font-size: 3rem;
-    color: var(--accent-yellow);
-    margin-bottom: 15px;
-}
-
-.phone-screen h3 {
+.malla-card h4 {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    color: var(--navy-dark);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.phone-screen p {
-    font-size: 0.8rem;
-    color: #CBD5E1;
-    margin-bottom: 20px;
+.malla-card ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-.screen-badge {
-    background: #25D366;
-    color: #000;
-    font-size: 0.75rem;
+.malla-card ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.malla-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
     font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 12px;
 }
 
 /* ==========================================
@@ -564,7 +422,9 @@ body {
     transition: transform 0.3s ease;
 }
 
-.cost-card:hover { transform: translateY(-5px); }
+.cost-card:hover {
+    transform: translateY(-5px);
+}
 
 .cost-card h3 {
     font-family: var(--font-heading);
@@ -595,13 +455,24 @@ body {
     border: 2px solid var(--accent-yellow);
 }
 
-.cost-card.highlight:hover { transform: scale(1.05) translateY(-5px); }
-.cost-card.highlight h3 { color: var(--white); }
-.cost-card.highlight .price { color: var(--accent-yellow); }
-.cost-card.highlight p { color: rgba(255,255,255,0.85); }
+.cost-card.highlight:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.cost-card.highlight h3 {
+    color: var(--white);
+}
+
+.cost-card.highlight .price {
+    color: var(--accent-yellow);
+}
+
+.cost-card.highlight p {
+    color: rgba(255,255,255,0.85);
+}
 
 /* ==========================================
-   GALERÍA DE FOTOS
+   GALERÍA DE FOTOS Y LIGHTBOX (CSS PURO)
    ========================================== */
 .gallery-grid {
     display: grid;
@@ -611,10 +482,12 @@ body {
 }
 
 .gallery-item {
+    display: block;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     height: 220px;
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -624,12 +497,61 @@ body {
     transition: transform 0.4s ease;
 }
 
-.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
 
-.more-photos-box { margin-top: 30px; }
+.more-photos-box {
+    margin-top: 30px;
+}
+
+/* Modal Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+}
+
+.lightbox:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 3px solid var(--white);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-yellow);
+}
 
 /* ==========================================
-   PODCAST
+   SECCIÓN PODCAST
    ========================================== */
 .podcast-card {
     background: linear-gradient(135deg, var(--navy-dark), #0d4b75);
@@ -680,13 +602,6 @@ body {
 .footer-brand p {
     font-size: 0.9rem;
     opacity: 0.8;
-}
-
-.footer-phrase {
-    font-style: italic;
-    margin-top: 10px;
-    color: var(--accent-yellow);
-    font-size: 0.95rem;
 }
 
 .footer-social h3 {
@@ -748,15 +663,17 @@ body {
     transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
 
 /* ==========================================
-   RESPONSIVO
+   RESPONSIVO (MÓVILES Y TABLETS)
    ========================================== */
 @media (max-width: 992px) {
-    .app-download-box { grid-template-columns: 1fr; }
-    .app-mockup { display: none; }
-    .podcast-card { grid-template-columns: 1fr; }
+    .podcast-card {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -768,14 +685,25 @@ body {
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 15px;
     }
 
-    .hero h1 { font-size: 2rem; }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .accordion-header {
+        font-size: 0.95rem;
+        padding: 15px;
+    }
 
     .cost-card.highlight {
         transform: scale(1);
         padding: 40px 20px;
+    }
+    
+    .cost-card.highlight:hover {
+        transform: translateY(-5px);
     }
 
     .footer-content {
