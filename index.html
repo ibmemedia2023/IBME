@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Bíblico Misionero Ecuatoriano - IBME</title>
-    <!-- Fuentes Google: Plus Jakarta Sans & Inter -->
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -23,7 +23,7 @@
             
             <!-- Botón Menú Hamburguesa para Móviles -->
             <button class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">
-                <i class="fa-solid fa-bars-staggered"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
 
             <nav class="nav-menu" id="nav-menu">
@@ -35,28 +35,20 @@
                 <a href="#galeria" class="nav-link">Ministerio</a>
                 <a href="#podcast" class="nav-link">Podcast</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
-                <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary nav-btn">
-                    <span>Inscripciones</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary nav-btn">Inscripciones</a>
             </nav>
         </div>
     </header>
 
     <!-- Sección Hero / Inicio -->
     <section id="inicio" class="hero">
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </div>
+        <div class="overlay"></div>
         <div class="container hero-content">
-            <div class="badge-pill">
-                <span class="badge-dot"></span> Formación Teológica y Misionera
-            </div>
-            <h1>Instituto Bíblico <br><span class="gradient-text">Misionero Ecuatoriano</span></h1>
+            <span class="badge">Formación Teológica y Misionera</span>
+            <h1>Instituto Bíblico Misionero Ecuatoriano</h1>
             <p>Capacitando líderes y misioneros con excelencia bíblica para transformar vidas y naciones.</p>
             <div class="hero-buttons">
-                <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary btn-lg glow">
+                <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary btn-lg">
                     <i class="fa-solid fa-pen-to-square"></i> Inscríbete Ahora
                 </a>
                 <a href="https://wa.me/593980753959" target="_blank" class="btn btn-whatsapp btn-lg">
@@ -69,13 +61,10 @@
     <!-- Sección Video Promocional -->
     <section id="video" class="section video-section">
         <div class="container text-center">
-            <span class="badge">Nuestra Identidad</span>
-            <h2 class="section-title">Quiénes Somos</h2>
+            <h2 class="section-title">Quienes Somos</h2>
             <p class="section-subtitle">Descubre nuestra visión, misión y la experiencia de estudiar con nosotros.</p>
-            <div class="video-container-glass">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/UWD9c4xIS08" title="Video Promocional IBME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/UWD9c4xIS08" title="Video Promocional IBME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -89,7 +78,7 @@
             
             <div class="deptos-grid">
                 <div class="depto-card">
-                    <div class="depto-icon"><i class="fa-solid fa-book-journal-whills"></i></div>
+                    <div class="depto-icon"><i class="fa-solid fa-book-bible"></i></div>
                     <h3>Dpto. Académico</h3>
                     <p>El IBME ofrece 3 años de capacitación teológica. El foco central de estudio es la Biblia en sí misma, con una duración de 6 semanas clase, cursando así 12 materias por año.</p>
                 </div>
@@ -99,7 +88,7 @@
                     <p>Consideramos que la convivencia y el trato entre hermanos ayuda al crecimiento espiritual, por esta razón evaluamos sus actitudes, su vida moral, y el cumplimiento de los horarios de las actividades del IBME, ya que el alumno está internado y sujeto a los horarios y reglamentos.</p>
                 </div>
                 <div class="depto-card">
-                    <div class="depto-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <div class="depto-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
                     <h3>Dpto. Ministerio</h3>
                     <p>Desde el primer año de estudios el alumno formará parte de una iglesia local, a partir de su segundo y tercer año podrá servir y ejercer sus dones espirituales, su cuarto año será de práctica, con viajes misioneros, enseñanzas, talleres, campamentos y discipulados en diferentes lugares del país.</p>
                 </div>
@@ -110,99 +99,84 @@
     <!-- Sección: Malla Curricular Desplegable (Accordion) -->
     <section id="materias" class="section">
         <div class="container text-center">
-            <span class="badge badge-accent">Plan Académico</span>
+            <span class="badge badge-accent">Malla Curricular</span>
             <h2 class="section-title">Materias del Plan de Estudios</h2>
             <p class="section-subtitle">Haz clic en cada año para desplegar la lista de asignaturas asignadas.</p>
 
             <div class="materias-accordion">
                 <!-- Primer Año -->
-                <details class="malla-card" open>
+                <details class="malla-card">
                     <summary class="malla-header bg-primer-ano">
                         <div class="header-title">
-                            <div class="year-badge"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <div>
-                                <h3>Primer Año</h3>
-                                <span class="year-sub">12 Asignaturas fundamentales</span>
-                            </div>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h3>Primer Año</h3>
                         </div>
                         <i class="fa-solid fa-chevron-down toggle-icon"></i>
                     </summary>
-                    <div class="malla-body">
-                        <ul class="materias-list">
-                            <li><span>Panorama del Antiguo Testamento I</span></li>
-                            <li><span>Introducción a la Interpretación Bíblica (Hermenéutica Especial)</span></li>
-                            <li><span>Vida Cristiana (Cosmovisión / Métodos de Estudio Bíblico)</span></li>
-                            <li><span>Panorama del Antiguo Testamento II</span></li>
-                            <li><span>Panorama de Doctrinas Bíblicas</span></li>
-                            <li><span>Pentateuco</span></li>
-                            <li><span>Panorama del Nuevo Testamento</span></li>
-                            <li><span>Evangelios Sinópticos (Evangelio de Juan, Vida de Cristo)</span></li>
-                            <li><span>Geografía Bíblica</span></li>
-                            <li><span>Teología I (Eclesiología / Escatología)</span></li>
-                            <li><span>Vida de Cristo</span></li>
-                            <li><span>Vida y Cartas de Pablo</span></li>
-                        </ul>
-                    </div>
+                    <ul class="materias-list">
+                        <li>Panorama del Antiguo Testamento I</li>
+                        <li>Introducción a la Interpretación Bíblica (Hermenéutica Especial)</li>
+                        <li>Vida Cristiana (Cosmovisión / Métodos de Estudio Bíblico)</li>
+                        <li>Panorama del Antiguo Testamento II</li>
+                        <li>Panorama de Doctrinas Bíblicas</li>
+                        <li>Pentateuco</li>
+                        <li>Panorama del Nuevo Testamento</li>
+                        <li>Evangelios Sinópticos (Evangelio de Juan, Vida de Cristo)</li>
+                        <li>Geografía Bíblica</li>
+                        <li>Teología I (Eclesiología / Escatología)</li>
+                        <li>Vida de Cristo</li>
+                        <li>Vida y Cartas de Pablo</li>
+                    </ul>
                 </details>
 
                 <!-- Segundo Año -->
                 <details class="malla-card">
                     <summary class="malla-header bg-segundo-ano">
                         <div class="header-title">
-                            <div class="year-badge"><i class="fa-solid fa-book-open"></i></div>
-                            <div>
-                                <h3>Segundo Año</h3>
-                                <span class="year-sub">12 Asignaturas profundas</span>
-                            </div>
+                            <i class="fa-solid fa-book-open"></i>
+                            <h3>Segundo Año</h3>
                         </div>
                         <i class="fa-solid fa-chevron-down toggle-icon"></i>
                     </summary>
-                    <div class="malla-body">
-                        <ul class="materias-list">
-                            <li><span>Hermenéutica (Métodos de Estudio Bíblico)</span></li>
-                            <li><span>Teología II (Teología Propia / Antropología / Hamartología)</span></li>
-                            <li><span>Génesis</span></li>
-                            <li><span>Romanos / Gálatas</span></li>
-                            <li><span>Teología III (Cristología / Neumatología)</span></li>
-                            <li><span>Isaías</span></li>
-                            <li><span>Homilética</span></li>
-                            <li><span>Escritos Juaninos</span></li>
-                            <li><span>Historia de la Iglesia</span></li>
-                            <li><span>Epístolas de la Prisión</span></li>
-                            <li><span>Lucas / Hechos</span></li>
-                            <li><span>Soteriología</span></li>
-                        </ul>
-                    </div>
+                    <ul class="materias-list">
+                        <li>Hermenéutica (Métodos de Estudio Bíblico)</li>
+                        <li>Teología II (Teología Propia / Antropología / Hamartología)</li>
+                        <li>Génesis</li>
+                        <li>Romanos / Gálatas</li>
+                        <li>Teología III (Cristología / Neumatología)</li>
+                        <li>Isaías</li>
+                        <li>Homilética</li>
+                        <li>Escritos Juaninos</li>
+                        <li>Historia de la Iglesia</li>
+                        <li>Epístolas de la Prisión</li>
+                        <li>Lucas / Hechos</li>
+                        <li>Soteriología</li>
+                    </ul>
                 </details>
 
                 <!-- Tercer Año -->
                 <details class="malla-card">
                     <summary class="malla-header bg-tercer-ano">
                         <div class="header-title">
-                            <div class="year-badge"><i class="fa-solid fa-cross"></i></div>
-                            <div>
-                                <h3>Tercer Año</h3>
-                                <span class="year-sub">12 Asignaturas ministeriales</span>
-                            </div>
+                            <i class="fa-solid fa-cross"></i>
+                            <h3>Tercer Año</h3>
                         </div>
                         <i class="fa-solid fa-chevron-down toggle-icon"></i>
                     </summary>
-                    <div class="malla-body">
-                        <ul class="materias-list">
-                            <li><span>Epístolas Pastorales</span></li>
-                            <li><span>Hebreos</span></li>
-                            <li><span>1 y 2 de Corintios</span></li>
-                            <li><span>Éxodo / Números</span></li>
-                            <li><span>Israel Primitivo</span></li>
-                            <li><span>Misiones y Evangelismo</span></li>
-                            <li><span>Apologética</span></li>
-                            <li><span>Consejería</span></li>
-                            <li><span>Dispensacionalismo</span></li>
-                            <li><span>Ministrando en la Iglesia</span></li>
-                            <li><span>Daniel</span></li>
-                            <li><span>Religiones Mundiales</span></li>
-                        </ul>
-                    </div>
+                    <ul class="materias-list">
+                        <li>Epístolas Pastorales</li>
+                        <li>Hebreos</li>
+                        <li>1 y 2 de Corintios</li>
+                        <li>Éxodo / Números</li>
+                        <li>Israel Primitivo</li>
+                        <li>Misiones y Evangelismo</li>
+                        <li>Apologética</li>
+                        <li>Consejería</li>
+                        <li>Dispensacionalismo</li>
+                        <li>Ministrando en la Iglesia</li>
+                        <li>Daniel</li>
+                        <li>Religiones Mundiales</li>
+                    </ul>
                 </details>
             </div>
         </div>
@@ -217,27 +191,27 @@
             
             <div class="requisitos-grid">
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <i class="fa-solid fa-user-check req-icon"></i>
                     <p>Ser <strong>mayor de 18 años</strong>.</p>
                 </div>
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <i class="fa-solid fa-graduation-cap req-icon"></i>
                     <p>Haber culminado la <strong>secundaria</strong> o similar.</p>
                 </div>
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <i class="fa-solid fa-file-contract req-icon"></i>
                     <p>Copia a color del <strong>título de secundaria</strong>.</p>
                 </div>
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <i class="fa-solid fa-id-card req-icon"></i>
                     <p>Copia de <strong>cédula y papeleta de votación</strong> <br><small>(Pasaporte o visa para extranjeros)</small>.</p>
                 </div>
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <i class="fa-solid fa-envelope-open-text req-icon"></i>
                     <p>Carta de <strong>recomendación pastoral</strong>.</p>
                 </div>
                 <div class="req-card">
-                    <div class="req-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <i class="fa-solid fa-hand-holding-dollar req-icon"></i>
                     <p>Pagar <strong>matrícula y cuota inicial</strong> <br><small>(No incluye gastos personales, medicina ni apuntes)</small>.</p>
                 </div>
             </div>
@@ -247,41 +221,27 @@
     <!-- Sección Admisiones: Costos -->
     <section class="section">
         <div class="container text-center">
-            <span class="badge">Inversión Educativa</span>
             <h2 class="section-title">Costos y Modalidades</h2>
             <p class="section-subtitle">Opciones accesibles para tu formación teológica.</p>
             
             <div class="costos-grid">
                 <div class="cost-card">
-                    <div class="cost-header">
-                        <h3>Matrícula Anual</h3>
-                        <p class="cost-desc">Pago único al inscribirse en cualquiera de nuestras modalidades.</p>
-                    </div>
-                    <div class="price-box">
-                        <span class="currency">$</span><span class="price">65</span>
-                    </div>
+                    <h3>Matrícula Anual</h3>
+                    <div class="price">$65</div>
+                    <p>Pago único al inscribirse en cualquiera de nuestras modalidades.</p>
                 </div>
                 <div class="cost-card highlight">
-                    <div class="popular-tag"><i class="fa-solid fa-star"></i> Opción Más Elegida</div>
-                    <div class="cost-header">
-                        <h3>Mensualidad Internado</h3>
-                        <p class="cost-desc">Formación intensiva presencial con estadía completa en nuestras instalaciones.</p>
-                    </div>
-                    <div class="price-box">
-                        <span class="currency">$</span><span class="price">165</span><span class="period">/mes</span>
-                    </div>
-                    <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary btn-block">
-                        Inscribirme en Internado
-                    </a>
+                    <span class="badge badge-accent">Recomendado</span>
+                    <h3>Mensualidad Internado</h3>
+                    <div class="price">$165</div>
+                    <p>Formación intensiva presencial con estadía completa en nuestras instalaciones.</p>
+                    <br>
+                    <a href="https://forms.gle/jABZLeaJhFp4V4Tq7" target="_blank" class="btn btn-primary">Inscribirme en Internado</a>
                 </div>
                 <div class="cost-card">
-                    <div class="cost-header">
-                        <h3>Mensualidad Semipresencial</h3>
-                        <p class="cost-desc">Modalidad flexible adaptada para estudiantes que trabajan o sirven activamente.</p>
-                    </div>
-                    <div class="price-box">
-                        <span class="currency">$</span><span class="price">100</span><span class="period">/mes</span>
-                    </div>
+                    <h3>Mensualidad Semipresencial</h3>
+                    <div class="price">$100</div>
+                    <p>Modalidad flexible adaptada para estudiantes que trabajan o sirven activamente.</p>
                 </div>
             </div>
         </div>
@@ -290,35 +250,57 @@
     <!-- Sección Galería de Ministerio con Lightbox CSS Puro -->
     <section id="galeria" class="section bg-light">
         <div class="container text-center">
-            <span class="badge">Comunidad</span>
             <h2 class="section-title">Nuestro Ministerio en Acción</h2>
-            <p class="section-subtitle">Explora los momentos vividos en nuestras actividades y viajes misioneros.</p>
                 
             <div class="gallery-grid">
-                <a href="#img1" class="gallery-item"><img src="53.JPG" alt="Ministerio IBME 1"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img2" class="gallery-item"><img src="DSC_0011.JPG" alt="Ministerio IBME 2"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img3" class="gallery-item"><img src="DSC_0023.JPG" alt="Ministerio IBME 3"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img4" class="gallery-item"><img src="DSC_0063.JPG" alt="Ministerio IBME 4"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img5" class="gallery-item"><img src="74.JPG" alt="Ministerio IBME 5"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img6" class="gallery-item"><img src="36.JPG" alt="Ministerio IBME 6"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img7" class="gallery-item"><img src="DSC_0156.JPG" alt="Ministerio IBME 7"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
-                <a href="#img8" class="gallery-item"><img src="DSC_0342.JPG" alt="Ministerio IBME 8"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></a>
+                <a href="#img1" class="gallery-item"><img src="53.JPG" alt="Ministerio IBME 1"></a>
+                <a href="#img2" class="gallery-item"><img src="DSC_0011.JPG" alt="Ministerio IBME 2"></a>
+                <a href="#img3" class="gallery-item"><img src="DSC_0023.JPG" alt="Ministerio IBME 3"></a>
+                <a href="#img4" class="gallery-item"><img src="DSC_0063.JPG" alt="Ministerio IBME 4"></a>
+                <a href="#img5" class="gallery-item"><img src="74.JPG" alt="Ministerio IBME 5"></a>
+                <a href="#img6" class="gallery-item"><img src="36.JPG" alt="Ministerio IBME 6"></a>
+                <a href="#img7" class="gallery-item"><img src="DSC_0156.JPG" alt="Ministerio IBME 7"></a>
+                <a href="#img8" class="gallery-item"><img src="DSC_0342.JPG" alt="Ministerio IBME 8"></a>
             </div>
 
             <!-- Modales Lightbox en HTML/CSS Puro -->
-            <div id="img1" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="53.JPG" alt="Ministerio IBME 1 Ampliada"></div>
-            <div id="img2" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="DSC_0011.JPG" alt="Ministerio IBME 2 Ampliada"></div>
-            <div id="img3" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="DSC_0023.JPG" alt="Ministerio IBME 3 Ampliada"></div>
-            <div id="img4" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="DSC_0063.JPG" alt="Ministerio IBME 4 Ampliada"></div>
-            <div id="img5" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="74.JPG" alt="Ministerio IBME 5 Ampliada"></div>
-            <div id="img6" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="36.JPG" alt="Ministerio IBME 6 Ampliada"></div>
-            <div id="img7" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="DSC_0156.JPG" alt="Ministerio IBME 7 Ampliada"></div>
-            <div id="img8" class="lightbox"><a href="#galeria" class="lightbox-close">&times;</a><img src="DSC_0342.JPG" alt="Ministerio IBME 8 Ampliada"></div>
+            <div id="img1" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="53.JPG" alt="Ministerio IBME 1 Ampliada">
+            </div>
+            <div id="img2" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0011.JPG" alt="Ministerio IBME 2 Ampliada">
+            </div>
+            <div id="img3" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0023.JPG" alt="Ministerio IBME 3 Ampliada">
+            </div>
+            <div id="img4" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0063.JPG" alt="Ministerio IBME 4 Ampliada">
+            </div>
+            <div id="img5" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="74.JPG" alt="Ministerio IBME 5 Ampliada">
+            </div>
+            <div id="img6" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="36.JPG" alt="Ministerio IBME 6 Ampliada">
+            </div>
+            <div id="img7" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0156.JPG" alt="Ministerio IBME 7 Ampliada">
+            </div>
+            <div id="img8" class="lightbox">
+                <a href="#galeria" class="lightbox-close">&times;</a>
+                <img src="DSC_0342.JPG" alt="Ministerio IBME 8 Ampliada">
+            </div>
 
             <!-- Botón Repositorio de Fotos Flickr -->
             <div class="more-photos-box">
-                <a href="https://flic.kr/ps/4844n2" target="_blank" class="btn btn-secondary btn-lg">
-                    <i class="fa-solid fa-images"></i> Más fotos aquí
+                <a href="https://flic.kr/ps/4844n2" target="_blank" class="btn btn-secondary">
+                    <i class="fa-solid fa-images"></i> Ver más fotos aquí
                 </a>
             </div>
         </div>
@@ -327,14 +309,12 @@
     <!-- Sección Podcast -->
     <section id="podcast" class="section podcast-section">
         <div class="container">
-            <div class="podcast-card-glass">
+            <div class="podcast-card">
                 <div class="podcast-info">
-                    <div class="badge-pill light">
-                        <i class="fa-solid fa-podcast"></i> Contenido Multimedia
-                    </div>
+                    <span class="badge badge-accent"><i class="fa-solid fa-podcast"></i> Podcast Oficial</span>
                     <h2>Escucha Nuestro Podcast</h2>
                     <p>Un espacio de edificación, enseñanza bíblica y reflexiones teológicas para tu crecimiento espiritual constante.</p>
-                    <a href="https://youtu.be/DDonrSdKzbA" target="_blank" class="btn btn-accent btn-lg">
+                    <a href="https://youtu.be/DDonrSdKzbA" target="_blank" class="btn btn-primary">
                         <i class="fa-brands fa-youtube"></i> Ver / Escuchar Episodio
                     </a>
                 </div>
@@ -385,11 +365,11 @@
             navMenu.classList.toggle('active');
             const icon = mobileMenuBtn.querySelector('i');
             if(navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars-staggered');
+                icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
             } else {
                 icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars-staggered');
+                icon.classList.add('fa-bars');
             }
         });
 
@@ -398,7 +378,7 @@
                 navMenu.classList.remove('active');
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars-staggered');
+                icon.classList.add('fa-bars');
             });
         });
     </script>
