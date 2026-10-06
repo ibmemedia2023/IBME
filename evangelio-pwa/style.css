@@ -1,0 +1,1086 @@
+/* Reset y variables de diseño */
+:root {
+  --bg-primary: #0b1120;
+  --bg-surface: #1e293b;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
+  --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --card-gradient: linear-gradient(145deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(245, 158, 11, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #d97706;
+  --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  position: relative;
+  padding-bottom: calc(75px + var(--safe-bottom));
+}
+
+/* Header */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background-color: rgba(11, 17, 32, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.brand-text h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-text p {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+}
+
+.icon-btn svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+/* Offline & Install Badges */
+.status-pill {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.status-offline {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Install Banner */
+.install-banner {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.install-text strong {
+  font-size: 0.85rem;
+  display: block;
+  color: #ffffff;
+}
+
+.install-text span {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+}
+
+.btn-install {
+  background: var(--accent);
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-close-banner {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Main Views */
+.main-view {
+  padding: 16px;
+  display: none;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.main-view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Top Back Navigation Bar */
+.section-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.btn-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 0.84rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+/* ========================================================= */
+/* SELECCIÓN DE EDADES EN INICIO (HUB)                      */
+/* ========================================================= */
+.hub-hero {
+  text-align: center;
+  padding: 24px 16px;
+  margin-bottom: 16px;
+  background: var(--card-gradient);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.hub-hero h2 {
+  font-size: 1.55rem;
+  font-weight: 850;
+  margin-bottom: 8px;
+}
+
+.hub-hero p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.age-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.age-card {
+  background: var(--card-gradient);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.age-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.age-card.card-kids {
+  border-color: rgba(251, 191, 36, 0.4);
+}
+.age-card.card-kids:hover {
+  border-color: #fbbf24;
+  background: linear-gradient(145deg, rgba(251, 191, 36, 0.12) 0%, #1e293b 100%);
+}
+
+.age-card.card-youth {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+.age-card.card-youth:hover {
+  border-color: #3b82f6;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.12) 0%, #1e293b 100%);
+}
+
+.age-card.card-adults {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+.age-card.card-adults:hover {
+  border-color: #a855f7;
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.12) 0%, #1e293b 100%);
+}
+
+.age-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.age-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge-kids { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+.badge-youth { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+.badge-adults { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+
+.age-card-icon {
+  font-size: 2.2rem;
+}
+
+.age-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.age-card-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.age-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ========================================================= */
+/* SECCIÓN 1: NIÑOS - LA AVENTURA DE LOS COLORES            */
+/* ========================================================= */
+.kids-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  background: var(--bg-surface);
+  padding: 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+}
+
+.kids-step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+.kids-step-dot.active {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  border-color: #ffffff;
+}
+
+.game-arena {
+  background: var(--bg-surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.kids-voice-banner {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.kids-voice-btn {
+  background: var(--accent-gradient);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.kids-instruction {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #fde68a;
+}
+
+/* JUEGO 1: ORO */
+.sky-arena {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  background: radial-gradient(circle, #1e1b4b 0%, #090d16 100%);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.crown-target {
+  width: 100px;
+  height: 70px;
+  border: 2px dashed #fbbf24;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.crown-target.filled {
+  border-style: solid;
+  background: rgba(251, 191, 36, 0.25);
+  box-shadow: 0 0 25px #fbbf24;
+}
+
+.stars-pool {
+  display: flex;
+  gap: 20px;
+}
+
+.draggable-star {
+  font-size: 2.2rem;
+  cursor: grab;
+  touch-action: none;
+  transition: transform 0.15s ease;
+  filter: grayscale(100%) opacity(50%);
+}
+
+.draggable-star.lit {
+  filter: none;
+  text-shadow: 0 0 16px #fbbf24;
+  transform: scale(1.1);
+}
+
+/* JUEGO 2: NEGRO */
+.maze-arena {
+  width: 100%;
+  height: 220px;
+  background: #05070c;
+  border-radius: var(--radius-md);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.maze-walker {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.maze-wall-alert {
+  position: absolute;
+  top: 14px;
+  background: rgba(239, 68, 68, 0.8);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: none;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* JUEGO 3: ROJO */
+.cross-arena {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.glowing-red-cross {
+  font-size: 4rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s;
+  position: relative;
+  filter: drop-shadow(0 0 15px #dc2626);
+}
+
+.glowing-red-cross:active {
+  transform: scale(0.92);
+}
+
+.chains-overlay {
+  position: absolute;
+  font-size: 2.8rem;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.chains-overlay.broken {
+  transform: scale(1.6);
+  opacity: 0;
+}
+
+.taps-counter {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fca5a5;
+}
+
+/* JUEGO 4: BLANCO */
+.clean-arena {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sponge-canvas {
+  width: 220px;
+  height: 200px;
+  border-radius: var(--radius-md);
+  cursor: crosshair;
+  touch-action: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* JUEGO 5: VERDE */
+.plant-arena {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.watering-can {
+  font-size: 2.6rem;
+  cursor: grab;
+  touch-action: none;
+  transition: transform 0.2s;
+}
+
+.seed-target {
+  font-size: 2.2rem;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.seed-target.grown {
+  font-size: 5rem;
+  transform: translateY(-10px);
+}
+
+/* VERSÍCULO REVELADO INFANTIL */
+.kids-verse-card {
+  margin-top: 18px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+  display: none;
+  animation: popIn 0.35s ease-out;
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.kids-verse-ref {
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.kids-verse-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ========================================================= */
+/* SECCIÓN 2: JÓVENES - CONEXIÓN REAL                       */
+/* ========================================================= */
+.youth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.youth-tab-btn {
+  flex: 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.youth-tab-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* SWIPE CARD (TEMA 1) */
+.swipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.swipe-card {
+  width: 100%;
+  min-height: 180px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: grab;
+  touch-action: none;
+}
+
+.swipe-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 14px;
+  gap: 12px;
+}
+
+.btn-swipe {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: var(--radius-full);
+  border: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-swipe-left {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid #ef4444;
+}
+
+.btn-swipe-right {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid #10b981;
+}
+
+/* CHAT INTERFAZ */
+.chat-window {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.chat-user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+}
+
+/* DESBLOQUEO DE STORY (INSTAGRAM STYLE) */
+.unlock-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(30, 41, 59, 0.9) 100%);
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.2s;
+}
+
+.unlock-box:hover {
+  transform: translateY(-2px);
+  border-color: #fbbf24;
+}
+
+.story-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.story-modal.active {
+  display: flex;
+}
+
+.story-card {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(145deg, #1e3a8a 0%, #0f172a 100%);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.story-progress-bar {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  right: 18px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.story-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  animation: storyTimer 6s linear;
+}
+
+@keyframes storyTimer {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ========================================================= */
+/* SECCIÓN 3: ADULTOS - EL PLAN ETERNO (PUENTE DE VIDA)      */
+/* ========================================================= */
+.adults-stepper {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.adult-step-pill {
+  flex: 1;
+  text-align: center;
+  padding: 6px 2px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.adult-step-pill.completed {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.adult-step-pill.active {
+  background: var(--accent);
+  color: #000000;
+  border-color: var(--accent);
+}
+
+/* LIENZO DEL PUENTE */
+.bridge-stage-container {
+  background: linear-gradient(180deg, #090d16 0%, #1e293b 100%);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 14px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.bridge-cliffs-view {
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.cliff {
+  width: 28%;
+  height: 100px;
+  background: #334155;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cliff-man {
+  border-top: 3px solid #ef4444;
+}
+
+.cliff-god {
+  border-top: 3px solid #fbbf24;
+  background: linear-gradient(180deg, #1e3a8a 0%, #1e293b 100%);
+}
+
+.cliff span {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cliff small {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.chasm-gap {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bridge-cross-object {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 24px;
+  background: #f59e0b;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 800;
+  font-size: 0.78rem;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  z-index: 5;
+}
+
+.bridge-cross-object.expanded {
+  width: 100%;
+  opacity: 1;
+}
+
+.walker-avatar {
+  position: absolute;
+  left: 12%;
+  bottom: 105px;
+  font-size: 1.8rem;
+  transition: all 1.2s ease-in-out;
+  z-index: 10;
+}
+
+.walker-avatar.crossed {
+  left: 82%;
+}
+
+/* ÁREA DE DRAG & DROP ADULTOS */
+.adult-interaction-box {
+  background: var(--bg-surface);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.draggable-card-adult {
+  background: var(--accent-gradient);
+  color: #000000;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: grab;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  touch-action: none;
+}
+
+.adult-verse-box {
+  background: rgba(15, 23, 42, 0.85);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 14px;
+  margin-top: 14px;
+  animation: fadeIn 0.3s;
+}
+
+/* ORACIÓN Y CONFIRMACIÓN ADULTOS */
+.adult-decision-box {
+  background: linear-gradient(145deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(11, 17, 32, 0.94);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 10px calc(8px + var(--safe-bottom));
+  z-index: 50;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.nav-item.active {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Camino de Vida - App Evangelística</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="description" content="Aplicación interactiva y 100% offline para compartir el Evangelio con Niños, Jóvenes y Adultos.">
+  <meta name="theme-color" content="#1e3a8a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CaminoDeVida">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header General -->
+    <header class="app-header">
+      <div class="brand" onclick="navigateTo('hub')">
+        <img src="icons/icon.svg" alt="Camino de Vida" class="brand-icon">
+        <div class="brand-text">
+          <h1>Camino de Vida</h1>
+          <p>Buenas Nuevas</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <span id="network-status" class="status-pill status-offline" title="100% disponible sin internet">
+          <span class="status-dot"></span>
+          <span id="network-text">Offline Listo</span>
+        </span>
+        
+        <button id="btn-theme-toggle" class="icon-btn" title="Cambiar Tema (Claro/Oscuro)">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+        
+        <button id="btn-share-app" class="icon-btn" title="Compartir App (Código QR)">
+          <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Banner de Instalación PWA (1 Clic) -->
+    <div id="install-banner" class="install-banner" style="display: none;">
+      <div class="install-text">
+        <strong>📲 Instalar en tu Pantalla de Inicio</strong>
+        <span>Disponible 100% sin internet para evangelizar</span>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button id="btn-install-prompt" class="btn-install">Instalar</button>
+        <button id="btn-close-banner" class="btn-close-banner">✕</button>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- VISTA PRINCIPAL: SELECTOR DE EDADES (HUB)                 -->
+    <!-- ========================================================= -->
+    <section id="view-hub" class="main-view active">
+      <div class="hub-hero">
+        <h2>El Mensaje que Transforma Vidas</h2>
+        <p>Selecciona la experiencia interactiva según la edad de la persona:</p>
+      </div>
+
+      <div class="age-cards-grid">
+        <!-- Tarjeta Niños -->
+        <div class="age-card card-kids" onclick="navigateTo('kids')">
+          <div class="age-card-header">
+            <span class="age-badge badge-kids">4 a 10 Años</span>
+            <span class="age-card-icon">🎨</span>
+          </div>
+          <h3 class="age-card-title">La Aventura de los Colores</h3>
+          <p class="age-card-desc">
+            El <em>Libro sin Palabras</em> gamificado con 5 mini-juegos interactivos: arrastrar estrellas, romper cadenas, frotar manchas y regar la semilla.
+          </p>
+          <div class="age-card-action">
+            <span>Explorar Juegos</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </div>
+        </div>
+
+        <!-- Tarjeta Jóvenes -->
+        <div class="age-card card-youth" onclick="navigateTo('youth')">
+          <div class="age-card-header">
+            <span class="age-badge badge-youth">12 a 18 Años</span>
+            <span class="age-card-icon">⚡</span>
+          </div>
+          <h3 class="age-card-title">Conexión Real: Desbloquea la Verdad</h3>
+          <p class="age-card-desc">
+            Formato de Stories y Chat interactivo respondiendo temas controversiales: <em>Ciencia vs. Fe</em> y <em>Sexualidad e Identidad</em> con la verdad bíblica.
+          </p>
+          <div class="age-card-action">
+            <span>Entrar al Chat</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </div>
+        </div>
+
+        <!-- Tarjeta Adultos -->
+        <div class="age-card card-adults" onclick="navigateTo('adults')">
+          <div class="age-card-header">
+            <span class="age-badge badge-adults">18+ Años</span>
+            <span class="age-card-icon">🏛️</span>
+          </div>
+          <h3 class="age-card-title">El Plan Eterno: Lógica y Gracia</h3>
+          <p class="age-card-desc">
+            El <em>Camino Romano</em> visual e interactivo a través de la ilustración del <em>Puente de Vida</em> con mecánica Drag & Drop y soteriología profunda.
+          </p>
+          <div class="age-card-action">
+            <span>Construir el Puente</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- VISTA 1: NIÑOS (LA AVENTURA DE LOS COLORES)               -->
+    <!-- ========================================================= -->
+    <section id="view-kids" class="main-view">
+      <div class="section-nav-header">
+        <button class="btn-back-home" onclick="navigateTo('hub')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Volver</span>
+        </button>
+        <span class="age-badge badge-kids">Niños (4-10)</span>
+      </div>
+
+      <!-- Barra de etapas de colores -->
+      <div class="kids-stepper">
+        <div class="kids-step-dot active" style="background: #fbbf24; color: #000;" onclick="selectKidsStage(0)">1</div>
+        <div class="kids-step-dot" style="background: #334155;" onclick="selectKidsStage(1)">2</div>
+        <div class="kids-step-dot" style="background: #ef4444;" onclick="selectKidsStage(2)">3</div>
+        <div class="kids-step-dot" style="background: #f8fafc; color: #000;" onclick="selectKidsStage(3)">4</div>
+        <div class="kids-step-dot" style="background: #10b981;" onclick="selectKidsStage(4)">5</div>
+      </div>
+
+      <!-- Contenedor del Juego Activo -->
+      <div class="game-arena" id="kids-game-arena">
+        <!-- Audio explicativo -->
+        <div class="kids-voice-banner">
+          <button class="kids-voice-btn" id="btn-kids-voice" onclick="playKidsAudio()" title="Escuchar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+          </button>
+          <div style="font-size: 0.86rem; color: #f8fafc;" id="kids-audio-caption">...</div>
+        </div>
+
+        <div class="kids-instruction" id="kids-instruction-text">Cargando juego...</div>
+
+        <!-- Escenarios dinámicos inyectados -->
+        <div id="kids-dynamic-stage" style="width: 100%;"></div>
+
+        <!-- Versículo Revelado tras completar -->
+        <div class="kids-verse-card" id="kids-verse-card">
+          <div class="kids-verse-ref" id="kids-verse-ref">Juan 14:2 (RVC)</div>
+          <div class="kids-verse-text" id="kids-verse-text">"..."</div>
+          <button class="btn-install" style="margin-top: 14px;" onclick="nextKidsStage()">¡Siguiente Color! ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- VISTA 2: JÓVENES (CONEXIÓN REAL)                          -->
+    <!-- ========================================================= -->
+    <section id="view-youth" class="main-view">
+      <div class="section-nav-header">
+        <button class="btn-back-home" onclick="navigateTo('hub')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Volver</span>
+        </button>
+        <span class="age-badge badge-youth">Jóvenes (12-18)</span>
+      </div>
+
+      <!-- Selector de temas -->
+      <div class="youth-tabs">
+        <button class="youth-tab-btn active" id="tab-youth-1" onclick="selectYouthTopic(0)">1. Ciencia vs Fe</button>
+        <button class="youth-tab-btn" id="tab-youth-2" onclick="selectYouthTopic(1)">2. Identidad</button>
+      </div>
+
+      <!-- Contenedor dinámico del tema -->
+      <div id="youth-topic-content">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- VISTA 3: ADULTOS (EL PLAN ETERNO - PUENTE DE VIDA)        -->
+    <!-- ========================================================= -->
+    <section id="view-adults" class="main-view">
+      <div class="section-nav-header">
+        <button class="btn-back-home" onclick="navigateTo('hub')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Volver</span>
+        </button>
+        <span class="age-badge badge-adults">Adultos (18+)</span>
+      </div>
+
+      <!-- Pasos del Camino Romano -->
+      <div class="adults-stepper">
+        <div class="adult-step-pill active" id="pill-step-1">1. Pecado</div>
+        <div class="adult-step-pill" id="pill-step-2">2. Muerte</div>
+        <div class="adult-step-pill" id="pill-step-3">3. Cruz</div>
+        <div class="adult-step-pill" id="pill-step-4">4. Fe</div>
+        <div class="adult-step-pill" id="pill-step-5">5. Vida</div>
+      </div>
+
+      <!-- Visualizador del Puente de Vida -->
+      <div class="bridge-stage-container">
+        <div class="bridge-cliffs-view">
+          <div class="cliff cliff-man">
+            <span>El Hombre</span>
+            <small>Separado</small>
+          </div>
+
+          <div class="chasm-gap">
+            <div class="bridge-cross-object" id="bridge-cross-span">✝️ CRUZ DE CRISTO ✝️</div>
+            <div class="walker-avatar" id="bridge-walker">🚶</div>
+          </div>
+
+          <div class="cliff cliff-god">
+            <span>Dios</span>
+            <small>Vida Eterna</small>
+          </div>
+        </div>
+
+        <div style="text-align: center; font-size: 0.88rem; color: #cbd5e1;" id="bridge-stage-caption">
+          El abismo del pecado separa al ser humano de un Dios santo.
+        </div>
+      </div>
+
+      <!-- Interacción Drag & Drop Paso a Paso -->
+      <div class="adult-interaction-box" id="adult-interaction-area">
+        <!-- Inyectado por JS -->
+      </div>
+
+      <!-- Versículo RVC revelado -->
+      <div class="adult-verse-box" id="adult-verse-display" style="display: none;">
+        <!-- Inyectado por JS -->
+      </div>
+    </section>
+
+    <!-- MODAL: HISTORIA / STORY DE DESBLOQUEO JÓVENES -->
+    <div id="modal-story" class="story-modal">
+      <div class="story-card">
+        <div class="story-progress-bar">
+          <div class="story-progress-fill"></div>
+        </div>
+        <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 8px;">
+          Desbloqueo de Verdad
+        </div>
+        <h3 id="story-ref" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 12px;">Hebreos 11:3 (RVC)</h3>
+        <p id="story-text" style="font-size: 1.05rem; font-style: italic; line-height: 1.6; margin-bottom: 16px;">
+          "..."
+        </p>
+        <button class="btn-install" onclick="closeStoryModal()" style="width: 100%;">
+          Entendido ✓
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL: COMPARTIR & QR OFFLINE -->
+    <div id="modal-share" class="story-modal">
+      <div class="story-card" style="max-width: 360px;">
+        <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">Compartir sin Conexión</h3>
+        <p style="font-size: 0.84rem; color: #cbd5e1; margin-bottom: 14px;">
+          Muestra este código para que otra persona lo escanee e instale la app en su teléfono:
+        </p>
+        <div style="background: #ffffff; padding: 10px; border-radius: 12px; display: inline-block; margin-bottom: 14px;">
+          <canvas id="qr-canvas" width="180" height="180"></canvas>
+        </div>
+        <button class="btn-install" onclick="closeShareModal()" style="width: 100%;">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- Barra de Navegación Inferior -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" id="nav-hub" onclick="navigateTo('hub')">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Inicio</span>
+      </button>
+
+      <button class="nav-item" id="nav-kids" onclick="navigateTo('kids')">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.27 19.59 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <span>Niños</span>
+      </button>
+
+      <button class="nav-item" id="nav-youth" onclick="navigateTo('youth')">
+        <svg viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.05.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.01-4.09l-2.45-1.44C16.19 17.84 14.26 19 12 19z"/></svg>
+        <span>Jóvenes</span>
+      </button>
+
+      <button class="nav-item" id="nav-adults" onclick="navigateTo('adults')">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+        <span>Adultos</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="sound.js"></script>
+  <script src="qr.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
